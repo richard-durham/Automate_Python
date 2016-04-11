@@ -13,18 +13,15 @@ password must be:
 import re
 
 def passwordChecker(password):
-	lengthChecker = re.compile(r'.{7}')
+	lengthChecker = re.compile(r'.{8}')
 	digitChecker = re.compile(r'\d')
 	lowerCaseChecker = re.compile(r'[a-z]')
 	upperCaseChecker = re.compile(r'[A-Z]')
 
-	result = lengthChecker(password)
-	print (result.group())
-
-	if lengthChecker.search(password) == True:
-		if digitChecker.search(password) == True:
-			if lowerCaseChecker.search(password) == True:
-				if upperCaseChecker.search(password) == True:
+	if lengthChecker.search(password) != None:
+		if digitChecker.search(password) != None:
+			if lowerCaseChecker.search(password) != None:
+				if upperCaseChecker.search(password) != None:
 					return 'Strong'
 				else:
 					return 'Include a least 1 upper case character A-Z'
