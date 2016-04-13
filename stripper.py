@@ -21,7 +21,9 @@ def stripper(stringToStrip, characters = ' '):
 	stripRegex = re.compile(characters)
 
 	if characters == ' ':
-		pass
+		stripRegex = re.compile(r'(^\s*)(.*)(\s*$)')
+		mo = stripRegex.search(stringToStrip)
+		return (mo.group(2))
 	else:
 		strippedString = stripRegex.sub('',stringToStrip)
 		return strippedString
