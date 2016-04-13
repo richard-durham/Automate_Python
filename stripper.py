@@ -23,7 +23,9 @@ def stripper(stringToStrip, characters = ' '):
 	if characters == ' ':
 		stripRegex = re.compile(r'(^\s*)(.*)(\s*$)')
 		mo = stripRegex.search(stringToStrip)
-		return (mo.group(2))
+		startSpace, strippedString, endSpace = mo.groups()
+		return strippedString
+		#return (mo.group(2))
 	else:
 		strippedString = stripRegex.sub('',stringToStrip)
 		return strippedString
