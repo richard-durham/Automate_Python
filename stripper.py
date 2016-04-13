@@ -33,3 +33,4 @@ def stripper(stringToStrip, characters = ' '):
 
 print (stripper('  abcd fgh  '))
 print (stripper('  accdggccd', 'c'))
+print (stripper('            '))
